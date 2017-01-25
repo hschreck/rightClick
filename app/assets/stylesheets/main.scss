@@ -1,0 +1,85 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$height: 96px;
+$buttonColor: #4285f4;
+$qtyColor: lighten($buttonColor, 10%);
+$subColor: adjust-hue(darken($buttonColor, 18%), 40%);
+
+
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  columns: 2;
+  padding: 1%;
+  margin-bottom: 60px;
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+}
+
+.button_container {
+  display: inline-block;
+  width: 100%;
+  height: $height;
+  margin: 0 auto;
+  margin-bottom: 2.8%;
+  box-shadow: 1px 1px darken($buttonColor, 40%);
+}
+
+.button_container:nth-child(2n) {
+  float: right;
+}
+
+.name {
+  min-width: 68%;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  line-height: $height;
+  background-color: $buttonColor;
+  font-size: 1.3em;
+}
+
+
+.buttonSub {
+  width: 12%;
+  background-color: $subColor;
+  float: right;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: $height;
+  font-size: 2em;
+}
+
+.buttonQty {
+  width: 20%;
+  background-color: $qtyColor;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  float: right;
+  text-align: center;
+  line-height: $height;
+}
+
+.lastaction {
+  background-color: #333;
+  color: #ccc;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.7em;
+  padding: 12px;
+}

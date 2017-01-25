@@ -1,0 +1,24 @@
+<div class="container">
+  <% @drives.each do |drive| %>
+    <div class="button_container">
+      <%= link_to(controller: 'main', action: 'home', invAction: 'add', drive: drive.name) do %>
+        <div class="name">
+          <%= drive.name %>
+        </div>
+      <% end %>
+          <div class="buttonQty">
+            <%= Inventory.where("drive = ?", drive.name).count %>
+          </div>
+        <%= link_to(controller: 'main', action: 'home', invAction: 'remove', drive: drive.name) do %>
+          <div class="buttonSub">
+            -
+          </div>
+        <% end %>
+    </div>
+
+  <% end %>
+</div>
+
+<div class="lastaction">
+  <%= @message %>
+</div>
