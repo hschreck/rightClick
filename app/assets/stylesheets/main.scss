@@ -2,15 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $height: 96px;
-$buttonColor: #4285f4;
-$qtyColor: lighten($buttonColor, 10%);
-$subColor: adjust-hue(darken($buttonColor, 18%), 40%);
+$buttonColor: white;
+$qtyColor: lighten(#4bb9d4, 8%);
+$subColor: lighten(red, 16%);
+$roundRadius: 8px;
+$bodyBG: #e2e2e2;
+$borderColor: darken($bodyBG, 24%);
 
 
 
 body {
-  font-family: sans-serif;
+  font-family: -apple-system-font, "Helvetica-Neue", Helvetica, sans-serif;
   margin: 0;
+  background-color: $bodyBG;
 }
 
 .container {
@@ -24,7 +28,7 @@ body {
 
 a {
   color: #000;
-  font-weight: bold;
+  font-weight: none;
 }
 
 .button_container {
@@ -33,44 +37,59 @@ a {
   height: $height;
   margin: 0 auto;
   margin-bottom: 2.8%;
-  box-shadow: 1px 1px darken($buttonColor, 40%);
+  //box-shadow: 1px 1px darken($buttonColor, 40%);
+  border-radius: $roundRadius;
+  //border: 2px solid darken($buttonColor, 40%);
+  background-color: $buttonColor;
+
 }
 
-.button_container:nth-child(2n) {
-  float: right;
-}
 
 .name {
-  min-width: 68%;
+  min-width: calc(60% - 2px);
+  min-height: calc(100% - 4px);
+  max-height: calc(100% - 4px);
   display: inline-block;
   margin: 0;
   text-align: center;
   line-height: $height;
   background-color: $buttonColor;
-  font-size: 1.3em;
+  font-size: 2em;
+  border-top-left-radius: $roundRadius;
+  border-bottom-left-radius: $roundRadius;
+  border: 2px solid $borderColor;
+  border-right: none;
 }
 
 
 .buttonSub {
-  width: 12%;
+  width: 20%;
   background-color: $subColor;
   float: right;
   height: 100%;
   color: #fff;
   text-align: center;
   line-height: $height;
-  font-size: 2em;
+  font-size: 4em;
+  //border-top-left-radius: $roundRadius;
+  //border-bottom-left-radius: $roundRadius;
+  border-style:  none;
 }
 
 .buttonQty {
   width: 20%;
   background-color: $qtyColor;
   height: 100%;
+  font-size: 1.8em;
+  font-weight: bold;
   display: inline-block;
   margin: 0;
   float: right;
   text-align: center;
   line-height: $height;
+  border-top-right-radius: $roundRadius;
+  border-bottom-right-radius: $roundRadius;
+  border-style:  none;
 }
 
 .lastaction {
